@@ -20,6 +20,8 @@ jobs:
       - uses: gradle/actions/setup-gradle@v4
         with:
           gradle-version: '8.9'
+      - name: Rebuild packaged project
+        run: cat radiactive-bubbles-android-project.zip.part00 radiactive-bubbles-android-project.zip.part01 > radiactive-bubbles-android-project.zip
       - name: Prepare Android project
         run: unzip -o radiactive-bubbles-android-project.zip
       - name: Build debug APK
